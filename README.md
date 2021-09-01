@@ -1,1 +1,1 @@
-# demoqa-tests-automation_
+# demoqa-tests-automation
