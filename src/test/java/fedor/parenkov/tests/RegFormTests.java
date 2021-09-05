@@ -18,7 +18,6 @@ public class RegFormTests {
 
     @Test
     void RegFormTest() {
-        //String permanentAddress = "some street 1";
 
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue("Sherlock");
@@ -35,9 +34,7 @@ public class RegFormTests {
         $("#uploadPicture").uploadFromClasspath("img/222.jpg");
         $("#currentAddress").setValue("London, Baker street, 221b");
         $("#stateCity-wrapper").$(byText("Select State")).click();
-        //$("#state").click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
-        //$("#city").click();
         $("#stateCity-wrapper").$(byText("Select City")).click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
         $("#submit").click();
@@ -55,6 +52,7 @@ public class RegFormTests {
         $(".modal-body").shouldHave(text("NCR Delhi"));
 
         $("#closeLargeModal").click();
+
         Selenide.closeWebDriver();
     }
 }
