@@ -50,6 +50,7 @@ public class RegFormTests {
         $(".modal-body").shouldHave(text("222.jpg"));
         $(".modal-body").shouldHave(text("London, Baker street, 221b"));
         $(".modal-body").shouldHave(text("NCR Delhi"));
+
         $("#closeLargeModal").click();
 
         Selenide.closeWebDriver();
