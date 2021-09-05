@@ -20,17 +20,26 @@ public class RegFormTests {
         //String permanentAddress = "some street 1";
 
         open("https://demoqa.com/automation-practice-form");
-        $("#firstName").setValue("Fedor");
-        $("#lastName").setValue("Parenkov");
-        $("#userEmail").setValue("parenkov.fedor@gmail.com");
+        $("#firstName").setValue("Sherlock");
+        $("#lastName").setValue("Holmes");
+        $("#userEmail").setValue("holmes@gmail.com");
         $("#genterWrapper").$(byText("Male")).click();
-        $("#userNumber").setValue("9065554433");
+        $("#userNumber").setValue("9995554433");
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").$(byText("May")).click();
-        $(".react-datepicker__year-select").$(byText("1986")).click();
+        $(".react-datepicker__year-select").$(byText("1906")).click();
         $(byXpath("//div[@class='react-datepicker__day react-datepicker__day--001']")).click();
         $("#subjectsInput").setValue("Chemistry").pressEnter();
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("img/222.jpg");
+        $("#currentAddress").setValue("London, Baker street, 221b");
+        $("#stateCity-wrapper").$(byText("Select State")).click();
+        //$("#state").click();
+        $("#stateCity-wrapper").$(byText("NCR")).click();
+        //$("#city").click();
+        $("#stateCity-wrapper").$(byText("Select City")).click();
+        $("#stateCity-wrapper").$(byText("Delhi")).click();
+
+
     }
 }
