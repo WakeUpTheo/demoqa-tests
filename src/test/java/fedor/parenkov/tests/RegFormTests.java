@@ -1,6 +1,7 @@
 package fedor.parenkov.tests;
 
 import com.codeborne.selenide.Configuration;
+import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -39,7 +40,21 @@ public class RegFormTests {
         //$("#city").click();
         $("#stateCity-wrapper").$(byText("Select City")).click();
         $("#stateCity-wrapper").$(byText("Delhi")).click();
+        $("#submit").click();
 
+        $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
+        $(".modal-body").shouldHave(text("Sherlock Holmes"));
+        $(".modal-body").shouldHave(text("holmes@gmail.com"));
+        $(".modal-body").shouldHave(text("Male"));
+        $(".modal-body").shouldHave(text("9995554433"));
+        $(".modal-body").shouldHave(text("01 May,1906"));
+        $(".modal-body").shouldHave(text("Chemistry"));
+        $(".modal-body").shouldHave(text("Music"));
+        $(".modal-body").shouldHave(text("222.jpg"));
+        $(".modal-body").shouldHave(text("London, Baker street, 221b"));
+        $(".modal-body").shouldHave(text("NCR Delhi"));
 
+        $("#closeLargeModal").click();
+        Selenide.closeWebDriver();
     }
 }
