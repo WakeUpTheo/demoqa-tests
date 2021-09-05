@@ -29,5 +29,8 @@ public class RegFormTests {
         $(".react-datepicker__month-select").$(byText("May")).click();
         $(".react-datepicker__year-select").$(byText("1986")).click();
         $(byXpath("//div[@class='react-datepicker__day react-datepicker__day--001']")).click();
+        $("#subjectsInput").setValue("Chemistry").pressEnter();
+        $("#hobbiesWrapper").$(byText("Music")).click();
+        $("#uploadPicture").uploadFromClasspath("img/222.jpg");
     }
 }
