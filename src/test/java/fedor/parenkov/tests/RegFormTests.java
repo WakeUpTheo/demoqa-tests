@@ -52,7 +52,5 @@ public class RegFormTests {
         $(".modal-body").shouldHave(text("NCR Delhi"));
 
         $("#closeLargeModal").click();
-
-        Selenide.closeWebDriver();
     }
 }
