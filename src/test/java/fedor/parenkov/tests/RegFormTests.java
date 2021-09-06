@@ -1,7 +1,6 @@
 package fedor.parenkov.tests;
 
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -32,6 +31,12 @@ public class RegFormTests {
         $("#subjectsInput").setValue("Chemistry").pressEnter();
         $("#hobbiesWrapper").$(byText("Music")).click();
         $("#uploadPicture").uploadFromClasspath("img/222.jpg");
+
+        // На экранах с разрешением 1600*900 и ниже проверки, идущие после заполнения currentAddress, фейлятся
+        //из-за того, что не все элементы помещаются на экране + мешает рекламный блок.
+        //Поэтому сделал скролл вниз, чтобы скрытые элементы были в зоне видимости
+        $(byXpath("//*[@id='submit']")).scrollIntoView(true);
+
         $("#currentAddress").setValue("London, Baker street, 221b");
         $("#stateCity-wrapper").$(byText("Select State")).click();
         $("#stateCity-wrapper").$(byText("NCR")).click();
@@ -50,7 +55,5 @@ public class RegFormTests {
         $(".modal-body").shouldHave(text("222.jpg"));
         $(".modal-body").shouldHave(text("London, Baker street, 221b"));
         $(".modal-body").shouldHave(text("NCR Delhi"));
-
-        $("#closeLargeModal").click();
     }
 }
