@@ -18,7 +18,6 @@ public class RegFormTests {
     @Test
     void RegFormTest() {
 
-        // Заполнение тестовой формы
         open("https://demoqa.com/automation-practice-form");
         $("#firstName").setValue("Sherlock");
         $("#lastName").setValue("Holmes");
