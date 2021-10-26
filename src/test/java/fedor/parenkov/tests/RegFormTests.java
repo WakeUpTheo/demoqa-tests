@@ -45,15 +45,17 @@ public class RegFormTests {
         $("#submit").click();
 
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".modal-body").shouldHave(text("Sherlock Holmes"));
-        $(".modal-body").shouldHave(text("holmes@gmail.com"));
-        $(".modal-body").shouldHave(text("Male"));
-        $(".modal-body").shouldHave(text("9995554433"));
-        $(".modal-body").shouldHave(text("01 May,1906"));
-        $(".modal-body").shouldHave(text("Chemistry"));
-        $(".modal-body").shouldHave(text("Music"));
-        $(".modal-body").shouldHave(text("222.jpg"));
-        $(".modal-body").shouldHave(text("London, Baker street, 221b"));
-        $(".modal-body").shouldHave(text("NCR Delhi"));
+        $(".modal-body").shouldHave(
+                text("Sherlock Holmes"),
+                text("holmes@gmail.com"),
+                text("Male"),
+                text("9995554433"),
+                text("01 May,1906"),
+                text("Chemistry"),
+                text("Music"),
+                text("222.jpg"),
+                text("London, Baker street, 221b"),
+                text("NCR Delhi")
+        );
     }
 }
